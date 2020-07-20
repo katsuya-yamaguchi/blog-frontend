@@ -17,34 +17,28 @@ const useStyles = makeStyles(() =>
       height: '100%',
       zIndex: 1000,
       top: 0,
-      left: 0
-    },
-    cover_inview: {
-      opacity: 1,
-      visibility: 'visible',
+      left: 0,
       background: 'rgba(0, 0, 0, 0.3)'
     },
     form: {
       opacity: 0,
       visibility: 'hidden',
       position: 'fixed',
-      top: 0,
-      left: 0,
+      top: '30%',
+      left: '40%',
       fontWeight: 'bold',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center'
-    },
-    form_inview: {
-      opacity: 1,
-      visibility: 'visible',
       background: 'rgba(255, 255, 255)',
       width: '400px',
       height: '300px',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
       zIndex: 2000,
-      top: '30%',
-      left: '40%'
-    }
+    },
+    inView: {
+      opacity: 1,
+      visibility: 'visible'
+    },
   })
 )
 
@@ -99,7 +93,7 @@ const SampleCalendar: React.FC = props => {
       onClick={() => setInView(false)}
       className={
         inView
-          ? `${classes.cover} ${classes.cover_inview}`
+          ? `${classes.cover} ${classes.inView}`
           : classes.cover
       }
     />
@@ -178,7 +172,7 @@ const SampleCalendar: React.FC = props => {
     <div
       className={
         inView
-          ? `${classes.form} ${classes.form_inview}`
+          ? `${classes.form} ${classes.inView}`
           : classes.form
       }
     >
