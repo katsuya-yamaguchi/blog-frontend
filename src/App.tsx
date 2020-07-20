@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { makeStyles, createStyles } from '@material-ui/core/styles'
+import SampleCalendar from "./components/SampleCalendar";
 
-function App() {
+const useStyles = makeStyles(() =>
+  createStyles({
+    root: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignContent: 'center',
+      width: '60%',
+      margin: 'auto auto'
+    }
+  })
+)
+
+const App: React.FC = props => {
+  const classes = useStyles()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.root}>
+      <SampleCalendar />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
